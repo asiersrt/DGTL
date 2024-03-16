@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black; /* Cambia el color de fondo a negro */
+}
+
+
+#video-container {
+    position: relative;
+    width: 20%; /* Ajusta el ancho del video según sea necesario */
+    margin: 0 auto; /* Centra horizontalmente el video */
+    overflow: hidden;
+}
+
+#video-container video {
+    width: 100%;
+    height: auto;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow containers to wrap to the next line */
+    justify-content: space-between; /* Distribute evenly */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #fff; /* Cambia el color del texto a blanco */
+}
+
+p {
+    text-align: justify;
+    color: #fff; /* Cambia el color del texto a blanco */
+}
+
+
+.mp3-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10%;
+
+}
+
+.mp3-container img {
+    width: 80%; /* Adjust the width as needed */
+    max-width: 120px; /* Limit the maximum width */
+}
+
+
+#navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+#navbar button {
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#navbar.hidden {
+    display: none; /* Initially hide the navbar */
+}
+
+
+/* Media queries for smaller screens */
+@media only screen and (max-width: 600px) {
+    .mp3-container {
+        flex-basis: 100%;
+    }
+
+    .mp3-container img {
+        max-width: 80px; /* Reduce the max-width for smaller screens */
+    }
+}
