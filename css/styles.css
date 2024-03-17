@@ -2,54 +2,97 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: black; /* Cambia el color de fondo a negro */
+    background-color: rgb(255, 255, 255); /* White background */
 }
 
-
-#video-container {
+#image-container {
     position: relative;
-    width: 20%; /* Ajusta el ancho del video según sea necesario */
-    margin: 0 auto; /* Centra horizontalmente el video */
+    width: 50%;
+    margin: 20px auto 40px; /* Adjust margin-bottom to add space between logo and content */
     overflow: hidden;
+    text-align: center;
 }
 
-#video-container video {
+#image-container img {
     width: 100%;
-    height: auto;
+    max-width: 300px;
+    display: inline-block;
 }
 
 main {
     padding: 20px;
     display: flex;
-    flex-wrap: wrap; /* Allow containers to wrap to the next line */
-    justify-content: space-between; /* Distribute evenly */
-}
-
-h1, h2 {
-    text-align: center;
-    color: #fff; /* Cambia el color del texto a blanco */
+    flex-wrap: wrap;
+    justify-content: center; /* Align containers in the center horizontally */
 }
 
 p {
-    text-align: justify;
-    color: #fff; /* Cambia el color del texto a blanco */
+    text-align: center;
+    color: #000000; /* Black text color */
+    margin-top: 5px;
+    text-decoration: none;
+    font-weight: bold; /* Make text bold */
 }
 
-
-.mp3-container {
+/* Updated folder container styles */
+.folder-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    padding: 10%;
+    width: 25%; /* Each container occupies 25% of the parent's width */
+    max-width: 200px; /* Limit the maximum width */
+}
 
+.folder-container a {
+    text-decoration: none; /* Remove underline from the text */
+    display: flex; /* Align image and text horizontally */
+    flex-direction: column; /* Arrange image and text vertically */
+    align-items: center; /* Center-align items */
+}
+
+.folder-container img {
+    width: 70%;
+    max-width: 100px;
+    margin-bottom: 10px; /* Add space between image and text */
+}
+
+.folder-container p {
+    margin: 0; /* Remove default margin */
+    font-weight: bold; /* Make text bold */
+}
+
+/* Updated MP3 container styles */
+.mp3-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px; /* Increase the margin between each MP3 container */
+    width: calc(25% - 40px); /* Each container occupies 25% of the parent's width with increased margin */
+    max-width: 200px; /* Limit the maximum width */
+    margin-right: 100px; /* Increase the margin between each MP3 container */
+}
+
+.mp3-container a {
+    text-decoration: none; /* Remove underline from the text */
+    display: flex; /* Align image and text horizontally */
+    flex-direction: column; /* Arrange image and text vertically */
+    align-items: center; /* Center-align items */
+    margin-bottom: 40px; /* Add space between rows */
 }
 
 .mp3-container img {
-    width: 80%; /* Adjust the width as needed */
-    max-width: 120px; /* Limit the maximum width */
+    width: 70%;
+    max-width: 100px;
+    margin-bottom: 20px; /* Add space between image and text */
 }
 
+.mp3-container p {
+    margin: 0; /* Remove default margin */
+    font-weight: bold; /* Make text bold */
+}
 
 #navbar {
     position: fixed;
@@ -60,7 +103,8 @@ p {
     padding: 10px;
     z-index: 1000;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the elements horizontally */
+    align-items: center;
 }
 
 #navbar button {
@@ -69,27 +113,61 @@ p {
     border: none;
     cursor: pointer;
     font-size: 16px;
+    margin: 0 10px; /* Add margin between buttons */
 }
 
+#mp3-timer-container {
+    display: flex;
+    align-items: center;
+}
+
+#mp3-timer {
+    width: 150px;
+    margin: 0 10px;
+}
 #navbar.hidden {
-    display: none; /* Initially hide the navbar */
+    display: none;
+}
+
+#play-pause-button {
+    width: 20px; /* Adjust button width as needed */
+    height: 20px; /* Adjust button height as needed */
+    background-image: url('../img/pause.png'); /* Update the image path */
+    background-size: cover; /* Scale the background image to cover the entire button */
+    border: none;
+    cursor: pointer;
+}
+
+#play-pause-button.playing {
+    background-image: url('../img/play-buttton.png'); /* Update the image path */
 }
 
 
-/* Media queries for smaller screens */
+
 @media only screen and (max-width: 600px) {
     .mp3-container {
         display: flex;
-        flex-wrap: wrap; /* Allow containers to wrap to the next line */
-        justify-content: center; /* Align containers in the center */
+        flex-direction: column;
+        justify-content: center; /* Center-align items horizontally */
+        align-items: center; /* Center-align items vertically */
+        width: auto; /* Set width to auto */
+        max-width: 90%; /* Limit the maximum width of the containers */
+        padding: 0 10px; /* Add padding to the sides */
     }
 
     .mp3-container img {
-        width: 40px; /* Make the MP3 logo smaller for smaller screens */
+        width: 70%; /* Adjust the width of the image */
+        max-width: 100px; /* Limit the maximum width of the images */
+        margin-bottom: 10px; /* Add spacing between mp3 images */
     }
 
-    /* Increase the size of MP4 logo for smaller screens */
-    #video-container video {
-        width: 120%;
+    .mp3-container p {
+        margin: 0; /* Remove default margin */
+        text-align: center; /* Center-align text */
     }
 }
+
+
+
+
+
