@@ -6,9 +6,11 @@ body {
 }
 
 #image-container {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 50%;
-    margin: 20px auto 40px; /* Adjust margin-bottom to add space between logo and content */
+    margin: 20px auto 40px;
     overflow: hidden;
     text-align: center;
 }
@@ -19,80 +21,61 @@ body {
     display: inline-block;
 }
 
-main {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Align containers in the center horizontally */
-}
-
-p {
-    text-align: center;
-    color: #000000; /* Black text color */
-    margin-top: 5px;
-    text-decoration: none;
-    font-weight: bold; /* Make text bold */
-}
-
-/* Updated folder container styles */
 .folder-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-    width: 25%; /* Each container occupies 25% of the parent's width */
-    max-width: 200px; /* Limit the maximum width */
+    margin-top: 20px; /* Add margin to separate logo and folders */
+    flex-wrap: wrap; /* Allow folders to wrap to the next line if needed */
 }
 
 .folder-container a {
-    text-decoration: none; /* Remove underline from the text */
-    display: flex; /* Align image and text horizontally */
-    flex-direction: column; /* Arrange image and text vertically */
-    align-items: center; /* Center-align items */
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px 40px; /* Add bottom margin to separate folders */
 }
 
 .folder-container img {
-    width: 70%;
-    max-width: 100px;
-    margin-bottom: 10px; /* Add space between image and text */
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 .folder-container p {
-    margin: 0; /* Remove default margin */
-    font-weight: bold; /* Make text bold */
+    margin: 0;
+    font-weight: bold;
 }
 
 /* Updated MP3 container styles */
 .mp3-container {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap to the next row */
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 100px; /* Increase the margin between each MP3 container */
-    width: calc(25% - 40px); /* Each container occupies 25% of the parent's width with increased margin */
-    max-width: 200px; /* Limit the maximum width */
-    margin-right: 100px; /* Increase the margin between each MP3 container */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 40px; /* Adjust margin between each MP3 container */
+    padding-left: 5%; /* Add some padding on the left */
+    padding-right: 5%; /* Add some padding on the right */
 }
 
-.mp3-container a {
-    text-decoration: none; /* Remove underline from the text */
-    display: flex; /* Align image and text horizontally */
-    flex-direction: column; /* Arrange image and text vertically */
-    align-items: center; /* Center-align items */
-    margin-bottom: 40px; /* Add space between rows */
+.mp3-item {
+    text-align: center; /* Center-align content */
+    margin: 0 10px; /* Add margin around each item */
+    max-width: 150px; /* Limit the maximum width of each item */
 }
 
 .mp3-container img {
     width: 70%;
     max-width: 100px;
-    margin-bottom: 20px; /* Add space between image and text */
+    margin-bottom: 10px; /* Add space between image and text */
 }
 
 .mp3-container p {
     margin: 0; /* Remove default margin */
     font-weight: bold; /* Make text bold */
 }
+
 
 #navbar {
     position: fixed;
@@ -142,32 +125,18 @@ p {
     background-image: url('../img/play-buttton.png'); /* Update the image path */
 }
 
+/* Footer Styles */
+.footer {
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed */
 
-
-@media only screen and (max-width: 600px) {
-    .mp3-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* Center-align items horizontally */
-        align-items: center; /* Center-align items vertically */
-        width: auto; /* Set width to auto */
-        max-width: 90%; /* Limit the maximum width of the containers */
-        padding: 0 10px; /* Add padding to the sides */
-    }
-
-    .mp3-container img {
-        width: 70%; /* Adjust the width of the image */
-        max-width: 100px; /* Limit the maximum width of the images */
-        margin-bottom: 10px; /* Add spacing between mp3 images */
-    }
-
-    .mp3-container p {
-        margin: 0; /* Remove default margin */
-        text-align: center; /* Center-align text */
-    }
 }
 
+/* Copyright Text Styles */
+.copyright {
+    font-size: 14px; /* Adjust font size */
+    margin-top: 10px; /* Adjust space between line and text */
+    font-weight: bold; /* Make text bold */
 
-
-
+}
 
